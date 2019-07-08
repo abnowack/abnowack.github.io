@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>"Notes on Lagrangian Mechanics" - ABlog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/articles/2016/06/24/notes-on-lagrangian-mechanics/">
+
+        <meta name="author" content="Aaron Nowack" />
+        <meta name="description" content="These are notes based on Mechanics by Landau and Lifshitz. Going over the main points in each chapter and derivations which needed more detail Principle of Least Action Generalized Coordinates : Any \(s\) quantities \(q_1, q_2, ..., q_3\) which define the position of a system with \(s\) degrees of freedom. Generalized Velocities …" />
+
+        <meta property="og:site_name" content="ABlog" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="&#34;Notes on Lagrangian Mechanics&#34;"/>
+        <meta property="og:url" content="/articles/2016/06/24/notes-on-lagrangian-mechanics/"/>
+        <meta property="og:description" content="These are notes based on Mechanics by Landau and Lifshitz. Going over the main points in each chapter and derivations which needed more detail Principle of Least Action Generalized Coordinates : Any \(s\) quantities \(q_1, q_2, ..., q_3\) which define the position of a system with \(s\) degrees of freedom. Generalized Velocities …"/>
+        <meta property="article:published_time" content="2016-06-24" />
+            <meta property="article:section" content="blogging" />
+            <meta property="article:author" content="Aaron Nowack" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="ABlog ATOM Feed"/>
+
+        <link href="/feeds/blogging.atom.xml" type="application/atom+xml" rel="alternate"
+              title="ABlog blogging ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ABlog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="/pages/about-me/">
+                             About Me
+                          </a></li>
+                        <li class="active">
+                            <a href="/category/blogging">Blogging</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/articles/2016/06/24/notes-on-lagrangian-mechanics/"
+                       rel="bookmark"
+                       title="Permalink to "Notes on Lagrangian Mechanics"">
+                        "Notes on Lagrangian Mechanics"
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-06-24T00:00:00-07:00"> Fri 24 June 2016</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>These are notes based on Mechanics by Landau and Lifshitz. Going over the main points in each chapter and derivations which needed more detail</p>
+<h1>Principle of Least Action</h1>
+<ul>
+<li>Generalized Coordinates : Any <span class="math">\(s\)</span> quantities <span class="math">\(q_1, q_2, ..., q_3\)</span> which define the position of a system with <span class="math">\(s\)</span> degrees of freedom.</li>
+<li>Generalized Velocities : The respective time derivatives <span class="math">\(\dot{q}_1, \dot{q}_2, ..., \dot{q}_3\)</span> of the generalized coordinates</li>
+</ul>
+<p>If at an instant all generalized coordinates <span class="math">\(q\)</span> and generalized velocities <span class="math">\(\dot{q}\)</span> are given, the accelerations <span class="math">\(\ddot{q}\)</span> at that instant are uniquely defined.</p>
+<p>Mechanical motion is characterized by a function <span class="math">\(L(q,\dot{q},t)\)</span> and a condition where at instants <span class="math">\(t_1, t_2\)</span> in time the positions <span class="math">\(q_1, q_2\)</span> change such that the integral
+</p>
+<div class="math">$$
+S = \int^{t_2}_{t_1} L(q,\dot{q},t) dt
+$$</div>
+<p>
+takes an extremum value. <span class="math">\(L(q,\dot{q},t)\)</span> is the <em>Lagrangian</em>, and <span class="math">\(S\)</span> the <em>Action</em>.</p>
+<p>To determine under what conditions S is minimized, start with <span class="math">\(q\)</span> such that <span class="math">\(S\)</span> over times <span class="math">\(t_1\)</span>, <span class="math">\(t_2\)</span> is at a minimum. Then any change in <span class="math">\(q\)</span>, <span class="math">\(q(t) \rightarrow q(t) + \delta q(t)\)</span> increases <span class="math">\(S\)</span>. Positions at <span class="math">\(q(t_1)\)</span>, <span class="math">\(q(t_2)\)</span> are already known so <span class="math">\(\delta q(t_1) = \delta q(t_2) = 0\)</span>.</p>
+<p>Then the change in <span class="math">\(S\)</span> </p>
+<div class="math">$$
+\delta S = \int^{t_2}_{t_1} L(q + \delta q, \dot{q} + \delta \dot{q}, t) ~ dt - 
+           \int^{t_2}_{t_1} L(q, \dot{q}, t) ~ dt
+$$</div>
+<p>Expanding <span class="math">\(L(q + \delta q, \dot{q} + \delta \dot{q}, t)\)</span> using the first order approximation <span class="math">\(f(x_0 + \delta x) \approx f(x_0) + \delta x \frac{df}{dx} \Big \rvert_{x_0}\)</span></p>
+<div class="math">$$
+L(q + \delta q, \dot{q} + \delta \dot{q}, t) = L(q, \dot{q}, t) + \partial q \frac{\partial}{\partial q} L(q, \dot{q}, t) + \partial \dot{q} \frac{\partial}{\partial \dot{q}} L(q, \dot{q}, t) + \partial q ~ \partial \dot{q} \frac{\partial}{\partial q} \frac{\partial}{\partial \dot{q}} L(q, \dot{q}, t)
+$$</div>
+<p>Ignoring the second order term on the end, when <span class="math">\(S\)</span> is minimized and <span class="math">\(\delta S = 0\)</span> we have</p>
+<div class="math">$$
+\int^{t_2}_{t_1} (\delta L - L) ~ dt = \int^{t_2}_{t_1} \left( \partial q ~ \frac{\partial L}{\partial q} + \partial \dot{q} ~ \frac{\partial L}{\partial \dot{q}} \right) dt = 0
+$$</div>
+<div class="math">$$
+\delta \dot{q} = \frac{d}{dt} \delta q
+$$</div>
+<div class="math">$$
+\int^{t_2}_{t_1} \left( \partial q ~ \frac{\partial L}{\partial q} + \frac{\partial L}{\partial \dot{q}} \frac{d}{dt} \delta q \right) dt = 0
+$$</div>
+<p>Now solving the second term inside the integral using integration by parts</p>
+<div class="math">$$
+\int^{t_2}_{t_1} \frac{\partial L}{\partial \dot{q}} \frac{d}{dt} \delta q ~ dt = 
+\left( \frac{\partial L}{\partial \dot{q}} \delta q \right) \Bigg \rvert^{t_2}_{t_1} - \int^{t_2}_{t_1} \delta q \frac{d}{dt} \frac{\partial L}{\partial \dot{q}} ~ dt
+$$</div>
+<p>Since <span class="math">\(\delta q(t_1) = \delta q(t_2) = 0\)</span> the first term vanishes. Substituting back, we have</p>
+<div class="math">$$
+\delta S = \int^{t_2}_{t_1} \left( \frac{\partial L}{\partial q} - \frac{d}{dt} \frac{\partial L}{\partial \dot{q}} \right) \delta q ~ dt
+$$</div>
+<p>Since <span class="math">\(\delta S = 0\)</span> for all <span class="math">\(\delta q\)</span> we choose, the integrand itself must be zero</p>
+<div class="math">$$
+\frac{d}{dt} \frac{\partial L}{\partial \dot{q}_i} - \frac{\partial L}{\partial q_i} = 0 \qquad i = 1, 2, ..., s
+$$</div>
+<p>Which is referred to as the Lagrange's Equations of Motion, written above for <span class="math">\(s\)</span> coordinates.</p>
+<p>Lagrange's Equations describe the relationship between accelerations, velocities, and positions of a mechanical system. They yield <span class="math">\(s\)</span> 2nd order differential equations which require <span class="math">\(2s\)</span> boundary conditions to solve for the equations of motion in time <span class="math">\(q_i (t)\)</span></p>
+<h3>Sidenote</h3>
+<p>The Lagrangian is not defined uniquely, the time derivative of any function dependent on position and time can be added.</p>
+<div class="math">$$
+L'(q, \dot{q}, t) = L(q, \dot{q}, t) + \frac{d}{dt} f(q, t)
+$$</div>
+<div class="math">$$
+S' = \int^{t_2}_{t_1} L(q, \dot{q}, t) ~ dt + \int^{t_2}_{t_1} \frac{df}{dt} dt = S + f(q(t_2), t_2) - f(q(t_1), t_1)
+$$</div>
+<div class="math">$$
+\delta S' = \delta S + \delta \left( f(q(t_2), t_2) - f(q(t_1), t_1) \right)
+$$</div>
+<div class="math">$$
+\delta f(q(t_2), t_2) = f(q(t_2), t_2) - f(q(t_2) + \delta q(t_2), t_2) = f(q(t_2), t_2) - f(q(t_2), t_2) - \delta q(t_2) \frac{\partial f}{\partial q} \Big \rvert_{t_2}
+$$</div>
+<p>Since <span class="math">\(\delta q(t_2) = 0\)</span> by definition, <span class="math">\(\delta f(q(t_2), t_2)\)</span> and subsequently <span class="math">\(\delta f(q(t_1), t_1)\)</span> all vanish and <span class="math">\(\delta S' = 0\)</span></p>
+<h1>Inertial Reference Frame</h1>
+<p>A frame of reference can always be chosen such that space is homogeneous and isotropic and time is also homogeneous. In this frame a free body which is at rest at an instant remains at rest. Such a frame is an <em>inertial frame of reference</em>.</p>
+<p>The Lagrangian of a free particle in in an inertial frame of reference must then not explicitly contain the position vector <span class="math">\(\vec{r}\)</span> or or the time <span class="math">\(t\)</span> due to the homogeneity of space and time in an inertial frame. Thus the lagrangian of a free particle can only be a function of velocity <span class="math">\(\vec{v}\)</span>. Additionally the isotropic property of space further restricts the Lagrangian to be a function of the magnitude of velocity only, <span class="math">\(L = L(\vec{v} \cdot \vec{v})\)</span>.</p>
+<p>Then <span class="math">\(\partial L / \partial ~ \vec{r} = 0\)</span> and Lagrange's equation for a free particle becomes</p>
+<div class="math">$$
+\frac{d}{dt} \left( \frac{\partial L}{\partial ~ \vec{v}} \right) = 0
+$$</div>
+<h1>The Law of Inertia</h1>
+<p>We apply Lagrange's equation onto <span class="math">\(L(\vec{v} \cdot \vec{v})\)</span></p>
+<div class="math">$$
+\frac{\partial L}{\partial ~ \vec{v}} = 2 ~ \vec{v} ~ L'(\vec{v} \cdot \vec{v})
+$$</div>
+<div class="math">$$
+\frac{d}{dt} \left( \frac{\partial L}{\partial ~ \vec{v}} \right) = 
+2 ~ \vec{a} ~ L'(\vec{v} \cdot \vec{v}) + 4 ~ \vec{v} (\vec{a} \cdot \vec{v}) ~ L''(\vec{v} \cdot \vec{v}) = 0
+$$</div>
+<p>Taking the dot product of both sides with <span class="math">\(\vec{v}\)</span></p>
+<div class="math">$$
+0 = 2 (\vec{a} \cdot \vec{v}) ( L'(\vec{v} \cdot \vec{v}) + 2 (\vec{v} \cdot \vec{v}) L''(\vec{v} \cdot \vec{v})
+$$</div>
+<p>In one solution <span class="math">\(\vec{a} = 0\)</span> and thus <span class="math">\(\vec{v}\)</span> is constant. The other solution arises from a differential equation</p>
+<div class="math">$$
+L'(\vec{v} \cdot \vec{v}) + 2 (\vec{v} \cdot \vec{v}) L''(\vec{v} \cdot \vec{v}) = 0
+$$</div>
+<div class="math">$$
+L(\vec{v} \cdot \vec{v}) = \alpha \sqrt{\vec{v} \cdot \vec{v}} + \beta
+$$</div>
+<p>While this is differentiable with respect to <span class="math">\(\vert v \vert = \sqrt{\vec{v} \cdot \vec{v}}\)</span>, it is not differentiable with respect to <span class="math">\(\vec{v}\)</span> for <span class="math">\(\vec{v} = \vec{0}\)</span> and <span class="math">\(\frac{\partial L}{\partial ~ \vec{v}} = 0\)</span> is no longer valid. Thus this second solution is inconsistent and discarded.</p>
+<p>Thus
+</p>
+<div class="math">$$
+\vec{v} = \text{constant}
+$$</div>
+<p>In any inertial frame, free motion takes place with a velocity constant in magnitude and direction. This is the <em>law of inertia</em>.</p>
+<h1>Absolute Reference Frames and Galilean Relativity</h1>
+<p>Given another frame moving uniformly in a straight line relative to a given inertial frame free motion continues to take place with a constant velocity. This gives rise to an infinite number of reference frames in which the laws of mechanics are the same, constituting <em>Galileo's Relativity Principle</em>. The equivalence of these frames shows that there is no single absolute frame of reference.</p>
+<p>Given two coordinates <span class="math">\(\vec{r}\)</span> and <span class="math">\(\vec{r}'\)</span> in two frames <span class="math">\(K\)</span> and <span class="math">\(K'\)</span> which the latter moves relative to the former with velocity <span class="math">\(\vec{V}\)</span>, the coordinates are related by the <em>Galilean Transformation</em></p>
+<div class="math">$$
+\vec{r} = \vec{r}' + \vec{V} t
+$$</div>
+<h1>Free Particle Lagrangian</h1>
+<p>Comparing two inertial frames related by an infinitesimal velocity <span class="math">\(\vec{\epsilon}\)</span>, the form of the lagrangians in each frame should remain the same that is depending only on the square of velocity. Further they should differ from each other only by the total time derivative of a function of coordinates and time.</p>
+<p>Given the relation between the inertial frames, the velocities are related through <span class="math">\(\vec{v}' = \vec{v} + \vec{\epsilon}\)</span>. The lagrangians are related then by</p>
+<div class="math">$$
+L' = L(\vec{v}' \cdot \vec{v}') = L( (\vec{v} + \vec{\epsilon}) \cdot (\vec{v} + \vec{\epsilon}) ) =
+L(\vec{v} \cdot \vec{v} + 2 \vec{v} \cdot \vec{\epsilon} + \vec{\epsilon} \cdot \vec{\epsilon} )
+$$</div>
+<p>Expanding to first order in terms of <span class="math">\(v^2 = \vec{v} \cdot \vec{v}\)</span></p>
+<div class="math">$$
+L(v'^2) = L(v^2) + \frac{\partial L}{\partial v^2} 2 \vec{v} \cdot \vec{\epsilon}
+$$</div>
+<p>Since the second term already depends on <span class="math">\(\vec{v}\)</span> linearly, to remain so (and thus a total time derivative of position), <span class="math">\(\partial L / \partial v^2\)</span> must be independent of velocity. Thus the lagrangian is a linear function of <span class="math">\(v^2\)</span> up to a constant factor. Written as</p>
+<div class="math">$$
+L = \tfrac{1}{2} m v^2
+$$</div>
+<p>By repeated transformations of infinitesimal relative velocities, the Lagrangian is also invariant for a finite relative velocity <span class="math">\(V\)</span> between frames.</p>
+<div class="math">$$
+L' = \tfrac{1}{2} m v'^2 = \tfrac{1}{2} m (\vec{v} + \vec{V})^2 = \tfrac{1}{2} m v^2 + m \vec{v} \cdot \vec{V} + \tfrac{1}{2} m V^2 = L + d (m \vec{r} \cdot \vec{V} + \tfrac{1}{2} m V^2 t) / dt
+$$</div>
+<p>Where the second term is a total time derivative of position and time and does not affect the action <span class="math">\(S\)</span>.</p>
+<h3>Sidenote</h3>
+<p>An additional constant could be added, but it does not matter in terms of Lagrange's equations. Extremums don't change with constant shifts.</p>
+<h1>Multiple Particle Lagrangian</h1>
+<p>For a system of particle which only interact with each other (closed system), the interaction can be described as a function of the coordinates <span class="math">\(-U(r_1, r_2, ...)\)</span> known as the <em>potential energy</em>.</p>
+<div class="math">$$
+L = \sum \tfrac{1}{2} m_a v_a^2 - U(r_1, r_2, ...)
+$$</div>
+<p>This lagrangian is isotropic in time as well, reversing time does not affect the lagrangian and therefore the equations of motion. Plugging this into the Euler-Lagrange equations we arrive at</p>
+<div class="math">$$
+\frac{d}{dt} \left( \frac{\partial}{\partial \dot{q}} \right) - \frac{\partial L}{\partial q} = 0
+$$</div>
+<div class="math">$$
+\frac{\partial L}{\partial v_a} = m_a v_a \qquad \frac{\partial L}{\partial r} = - \frac{\partial U}{\partial r_a}
+$$</div>
+<div class="math">$$
+\frac{d}{dt} m_a v_a = \frac{\partial U}{\partial r_a}
+$$</div>
+<div class="math">$$
+\text{Force} = m_a \frac{d v_a}{dt} = - \frac{\partial U}{\partial r_a}
+$$</div>
+<p>Where Force is expressed as in the classical Newton's Equation. The force, and thereby acceleration, only depend on the position of the system. These equations are identical up to a constant. The usual method is to define <span class="math">\(U\)</span> such that as <span class="math">\(r \rightarrow \infty\)</span>, <span class="math">\(U \rightarrow \infty\)</span>.</p>
+<p>This lagrangian can be rewritten terms of generalized coordinates <span class="math">\(q, \dot{q}\)</span> by expressing the cartesian coordintaes <span class="math">\(r_a\)</span>, <span class="math">\(v_a\)</span> in terms of the generalized coordinates.</p>
+<div class="math">$$
+r_a = f(q_1, q_2, ..., q_s) \qquad v_a = \sum_k \frac{\partial f_a}{\partial q_k} \dot{q}_k
+$$</div>
+<div class="math">$$
+L = \tfrac{1}{2} \sum_k \frac{\partial f_a}{\partial q_k} \dot{q}_k \sum_i \frac{\partial f_a}{\partial q_i} \dot{q}_i - U(q) = \tfrac{1}{2} \sum_{i,k} a_{i,k} (q) \dot{q}_i \dot{q}_k - U(q)
+$$</div>
+<p>For two interacting Lagrangian systems <span class="math">\(L_a\)</span>, <span class="math">\(L_b\)</span> the combined interaction is deonted as</p>
+<div class="math">$$
+L = T_a (q_a, \dot{q}_a) + T_b (q_b, \dot{q}_b) - U(q_a, q_b)
+$$</div>
+<p>Where <span class="math">\(T_{a}\)</span>, <span class="math">\(T_{b}\)</span> are the kinetic energy terms. To solve for <span class="math">\(L_a\)</span>, we can treat <span class="math">\(q_b\)</span> as independent variables which depend on time, <span class="math">\(q_b (t)\)</span>.</p>
+<div class="math">$$
+L = T_a (q_a, \dot{q}_a) + T_b (q_b (t), \dot{q}_b (t)) - U(q_a, q_b (t))
+$$</div>
+<p>And then changing perspective and considering <span class="math">\(t\)</span> instead of <span class="math">\(q_b (t)\)</span>, and <span class="math">\( T_b (q_b (t), \dot{q}_b (t))\)</span> can be ignored as a time derivative of a function that depends only on time, the lagrangian is now considered as</p>
+<div class="math">$$
+L = T_a (q_a, \dot{q}_a) - U(q_a, t)
+$$</div>
+<p>A free particle interacting with an external field is then given by</p>
+<div class="math">$$
+L = \tfrac{1}{2} m v^2 - U(r, t)
+$$</div>
+<p>And the equations of motion yield</p>
+<div class="math">$$
+m \dot{v} = - \frac{\partial U}{\partial r}
+$$</div>
+<p>If the force <span class="math">\(F\)</span> is independent of <span class="math">\(r\)</span> in the field, and thus the field is uniform,</p>
+<div class="math">$$
+U(r, t) = -F \cdot r
+$$</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +    
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://github.com/abnowack"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+    <li class="list-group-item"><a href="https://twitter.com/abnowack"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 Aaron Nowack
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+
+
+</body>
+</html>

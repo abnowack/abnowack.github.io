@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ABlog</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2016-06-24T00:00:00-07:00</updated><entry><title>"Notes on Lagrangian Mechanics"</title><link href="/articles/2016/06/24/notes-on-lagrangian-mechanics/" rel="alternate"></link><published>2016-06-24T00:00:00-07:00</published><updated>2016-06-24T00:00:00-07:00</updated><author><name>Aaron Nowack</name></author><id>tag:None,2016-06-24:/articles/2016/06/24/notes-on-lagrangian-mechanics/</id><summary type="html">&lt;p&gt;These are notes based on Mechanics by Landau and Lifshitz. Going over the main points in each chapter and derivations which needed more detail&lt;/p&gt;
+&lt;h1&gt;Principle of Least Action&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Generalized Coordinates : Any &lt;span class="math"&gt;\(s\)&lt;/span&gt; quantities &lt;span class="math"&gt;\(q_1, q_2, ..., q_3\)&lt;/span&gt; which define the position of a system with &lt;span class="math"&gt;\(s\)&lt;/span&gt; degrees of freedom.&lt;/li&gt;
+&lt;li&gt;Generalized Velocities …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;These are notes based on Mechanics by Landau and Lifshitz. Going over the main points in each chapter and derivations which needed more detail&lt;/p&gt;
+&lt;h1&gt;Principle of Least Action&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Generalized Coordinates : Any &lt;span class="math"&gt;\(s\)&lt;/span&gt; quantities &lt;span class="math"&gt;\(q_1, q_2, ..., q_3\)&lt;/span&gt; which define the position of a system with &lt;span class="math"&gt;\(s\)&lt;/span&gt; degrees of freedom.&lt;/li&gt;
+&lt;li&gt;Generalized Velocities : The respective time derivatives &lt;span class="math"&gt;\(\dot{q}_1, \dot{q}_2, ..., \dot{q}_3\)&lt;/span&gt; of the generalized coordinates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If at an instant all generalized coordinates &lt;span class="math"&gt;\(q\)&lt;/span&gt; and generalized velocities &lt;span class="math"&gt;\(\dot{q}\)&lt;/span&gt; are given, the accelerations &lt;span class="math"&gt;\(\ddot{q}\)&lt;/span&gt; at that instant are uniquely defined.&lt;/p&gt;
+&lt;p&gt;Mechanical motion is characterized by a function &lt;span class="math"&gt;\(L(q,\dot{q},t)\)&lt;/span&gt; and a condition where at instants &lt;span class="math"&gt;\(t_1, t_2\)&lt;/span&gt; in time the positions &lt;span class="math"&gt;\(q_1, q_2\)&lt;/span&gt; change such that the integral
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+S = \int^{t_2}_{t_1} L(q,\dot{q},t) dt
+$$&lt;/div&gt;
+&lt;p&gt;
+takes an extremum value. &lt;span class="math"&gt;\(L(q,\dot{q},t)\)&lt;/span&gt; is the &lt;em&gt;Lagrangian&lt;/em&gt;, and &lt;span class="math"&gt;\(S\)&lt;/span&gt; the &lt;em&gt;Action&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;To determine under what conditions S is minimized, start with &lt;span class="math"&gt;\(q\)&lt;/span&gt; such that &lt;span class="math"&gt;\(S\)&lt;/span&gt; over times &lt;span class="math"&gt;\(t_1\)&lt;/span&gt;, &lt;span class="math"&gt;\(t_2\)&lt;/span&gt; is at a minimum. Then any change in &lt;span class="math"&gt;\(q\)&lt;/span&gt;, &lt;span class="math"&gt;\(q(t) \rightarrow q(t) + \delta q(t)\)&lt;/span&gt; increases &lt;span class="math"&gt;\(S\)&lt;/span&gt;. Positions at &lt;span class="math"&gt;\(q(t_1)\)&lt;/span&gt;, &lt;span class="math"&gt;\(q(t_2)\)&lt;/span&gt; are already known so &lt;span class="math"&gt;\(\delta q(t_1) = \delta q(t_2) = 0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Then the change in &lt;span class="math"&gt;\(S\)&lt;/span&gt; &lt;/p&gt;
+&lt;div class="math"&gt;$$
+\delta S = \int^{t_2}_{t_1} L(q + \delta q, \dot{q} + \delta \dot{q}, t) ~ dt - 
+           \int^{t_2}_{t_1} L(q, \dot{q}, t) ~ dt
+$$&lt;/div&gt;
+&lt;p&gt;Expanding &lt;span class="math"&gt;\(L(q + \delta q, \dot{q} + \delta \dot{q}, t)\)&lt;/span&gt; using the first order approximation &lt;span class="math"&gt;\(f(x_0 + \delta x) \approx f(x_0) + \delta x \frac{df}{dx} \Big \rvert_{x_0}\)&lt;/span&gt;&lt;/p&gt;
+&lt;div class="math"&gt;$$
+L(q + \delta q, \dot{q} + \delta \dot{q}, t) = L(q, \dot{q}, t) + \partial q \frac{\partial}{\partial q} L(q, \dot{q}, t) + \partial \dot{q} \frac{\partial}{\partial \dot{q}} L(q, \dot{q}, t) + \partial q ~ \partial \dot{q} \frac{\partial}{\partial q} \frac{\partial}{\partial \dot{q}} L(q, \dot{q}, t)
+$$&lt;/div&gt;
+&lt;p&gt;Ignoring the second order term on the end, when &lt;span class="math"&gt;\(S\)&lt;/span&gt; is minimized and &lt;span class="math"&gt;\(\delta S = 0\)&lt;/span&gt; we have&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\int^{t_2}_{t_1} (\delta L - L) ~ dt = \int^{t_2}_{t_1} \left( \partial q ~ \frac{\partial L}{\partial q} + \partial \dot{q} ~ \frac{\partial L}{\partial \dot{q}} \right) dt = 0
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+\delta \dot{q} = \frac{d}{dt} \delta q
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+\int^{t_2}_{t_1} \left( \partial q ~ \frac{\partial L}{\partial q} + \frac{\partial L}{\partial \dot{q}} \frac{d}{dt} \delta q \right) dt = 0
+$$&lt;/div&gt;
+&lt;p&gt;Now solving the second term inside the integral using integration by parts&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\int^{t_2}_{t_1} \frac{\partial L}{\partial \dot{q}} \frac{d}{dt} \delta q ~ dt = 
+\left( \frac{\partial L}{\partial \dot{q}} \delta q \right) \Bigg \rvert^{t_2}_{t_1} - \int^{t_2}_{t_1} \delta q \frac{d}{dt} \frac{\partial L}{\partial \dot{q}} ~ dt
+$$&lt;/div&gt;
+&lt;p&gt;Since &lt;span class="math"&gt;\(\delta q(t_1) = \delta q(t_2) = 0\)&lt;/span&gt; the first term vanishes. Substituting back, we have&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\delta S = \int^{t_2}_{t_1} \left( \frac{\partial L}{\partial q} - \frac{d}{dt} \frac{\partial L}{\partial \dot{q}} \right) \delta q ~ dt
+$$&lt;/div&gt;
+&lt;p&gt;Since &lt;span class="math"&gt;\(\delta S = 0\)&lt;/span&gt; for all &lt;span class="math"&gt;\(\delta q\)&lt;/span&gt; we choose, the integrand itself must be zero&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\frac{d}{dt} \frac{\partial L}{\partial \dot{q}_i} - \frac{\partial L}{\partial q_i} = 0 \qquad i = 1, 2, ..., s
+$$&lt;/div&gt;
+&lt;p&gt;Which is referred to as the Lagrange's Equations of Motion, written above for &lt;span class="math"&gt;\(s\)&lt;/span&gt; coordinates.&lt;/p&gt;
+&lt;p&gt;Lagrange's Equations describe the relationship between accelerations, velocities, and positions of a mechanical system. They yield &lt;span class="math"&gt;\(s\)&lt;/span&gt; 2nd order differential equations which require &lt;span class="math"&gt;\(2s\)&lt;/span&gt; boundary conditions to solve for the equations of motion in time &lt;span class="math"&gt;\(q_i (t)\)&lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;Sidenote&lt;/h3&gt;
+&lt;p&gt;The Lagrangian is not defined uniquely, the time derivative of any function dependent on position and time can be added.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+L'(q, \dot{q}, t) = L(q, \dot{q}, t) + \frac{d}{dt} f(q, t)
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+S' = \int^{t_2}_{t_1} L(q, \dot{q}, t) ~ dt + \int^{t_2}_{t_1} \frac{df}{dt} dt = S + f(q(t_2), t_2) - f(q(t_1), t_1)
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+\delta S' = \delta S + \delta \left( f(q(t_2), t_2) - f(q(t_1), t_1) \right)
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+\delta f(q(t_2), t_2) = f(q(t_2), t_2) - f(q(t_2) + \delta q(t_2), t_2) = f(q(t_2), t_2) - f(q(t_2), t_2) - \delta q(t_2) \frac{\partial f}{\partial q} \Big \rvert_{t_2}
+$$&lt;/div&gt;
+&lt;p&gt;Since &lt;span class="math"&gt;\(\delta q(t_2) = 0\)&lt;/span&gt; by definition, &lt;span class="math"&gt;\(\delta f(q(t_2), t_2)\)&lt;/span&gt; and subsequently &lt;span class="math"&gt;\(\delta f(q(t_1), t_1)\)&lt;/span&gt; all vanish and &lt;span class="math"&gt;\(\delta S' = 0\)&lt;/span&gt;&lt;/p&gt;
+&lt;h1&gt;Inertial Reference Frame&lt;/h1&gt;
+&lt;p&gt;A frame of reference can always be chosen such that space is homogeneous and isotropic and time is also homogeneous. In this frame a free body which is at rest at an instant remains at rest. Such a frame is an &lt;em&gt;inertial frame of reference&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The Lagrangian of a free particle in in an inertial frame of reference must then not explicitly contain the position vector &lt;span class="math"&gt;\(\vec{r}\)&lt;/span&gt; or or the time &lt;span class="math"&gt;\(t\)&lt;/span&gt; due to the homogeneity of space and time in an inertial frame. Thus the lagrangian of a free particle can only be a function of velocity &lt;span class="math"&gt;\(\vec{v}\)&lt;/span&gt;. Additionally the isotropic property of space further restricts the Lagrangian to be a function of the magnitude of velocity only, &lt;span class="math"&gt;\(L = L(\vec{v} \cdot \vec{v})\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Then &lt;span class="math"&gt;\(\partial L / \partial ~ \vec{r} = 0\)&lt;/span&gt; and Lagrange's equation for a free particle becomes&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\frac{d}{dt} \left( \frac{\partial L}{\partial ~ \vec{v}} \right) = 0
+$$&lt;/div&gt;
+&lt;h1&gt;The Law of Inertia&lt;/h1&gt;
+&lt;p&gt;We apply Lagrange's equation onto &lt;span class="math"&gt;\(L(\vec{v} \cdot \vec{v})\)&lt;/span&gt;&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\frac{\partial L}{\partial ~ \vec{v}} = 2 ~ \vec{v} ~ L'(\vec{v} \cdot \vec{v})
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+\frac{d}{dt} \left( \frac{\partial L}{\partial ~ \vec{v}} \right) = 
+2 ~ \vec{a} ~ L'(\vec{v} \cdot \vec{v}) + 4 ~ \vec{v} (\vec{a} \cdot \vec{v}) ~ L''(\vec{v} \cdot \vec{v}) = 0
+$$&lt;/div&gt;
+&lt;p&gt;Taking the dot product of both sides with &lt;span class="math"&gt;\(\vec{v}\)&lt;/span&gt;&lt;/p&gt;
+&lt;div class="math"&gt;$$
+0 = 2 (\vec{a} \cdot \vec{v}) ( L'(\vec{v} \cdot \vec{v}) + 2 (\vec{v} \cdot \vec{v}) L''(\vec{v} \cdot \vec{v})
+$$&lt;/div&gt;
+&lt;p&gt;In one solution &lt;span class="math"&gt;\(\vec{a} = 0\)&lt;/span&gt; and thus &lt;span class="math"&gt;\(\vec{v}\)&lt;/span&gt; is constant. The other solution arises from a differential equation&lt;/p&gt;
+&lt;div class="math"&gt;$$
+L'(\vec{v} \cdot \vec{v}) + 2 (\vec{v} \cdot \vec{v}) L''(\vec{v} \cdot \vec{v}) = 0
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+L(\vec{v} \cdot \vec{v}) = \alpha \sqrt{\vec{v} \cdot \vec{v}} + \beta
+$$&lt;/div&gt;
+&lt;p&gt;While this is differentiable with respect to &lt;span class="math"&gt;\(\vert v \vert = \sqrt{\vec{v} \cdot \vec{v}}\)&lt;/span&gt;, it is not differentiable with respect to &lt;span class="math"&gt;\(\vec{v}\)&lt;/span&gt; for &lt;span class="math"&gt;\(\vec{v} = \vec{0}\)&lt;/span&gt; and &lt;span class="math"&gt;\(\frac{\partial L}{\partial ~ \vec{v}} = 0\)&lt;/span&gt; is no longer valid. Thus this second solution is inconsistent and discarded.&lt;/p&gt;
+&lt;p&gt;Thus
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\vec{v} = \text{constant}
+$$&lt;/div&gt;
+&lt;p&gt;In any inertial frame, free motion takes place with a velocity constant in magnitude and direction. This is the &lt;em&gt;law of inertia&lt;/em&gt;.&lt;/p&gt;
+&lt;h1&gt;Absolute Reference Frames and Galilean Relativity&lt;/h1&gt;
+&lt;p&gt;Given another frame moving uniformly in a straight line relative to a given inertial frame free motion continues to take place with a constant velocity. This gives rise to an infinite number of reference frames in which the laws of mechanics are the same, constituting &lt;em&gt;Galileo's Relativity Principle&lt;/em&gt;. The equivalence of these frames shows that there is no single absolute frame of reference.&lt;/p&gt;
+&lt;p&gt;Given two coordinates &lt;span class="math"&gt;\(\vec{r}\)&lt;/span&gt; and &lt;span class="math"&gt;\(\vec{r}'\)&lt;/span&gt; in two frames &lt;span class="math"&gt;\(K\)&lt;/span&gt; and &lt;span class="math"&gt;\(K'\)&lt;/span&gt; which the latter moves relative to the former with velocity &lt;span class="math"&gt;\(\vec{V}\)&lt;/span&gt;, the coordinates are related by the &lt;em&gt;Galilean Transformation&lt;/em&gt;&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\vec{r} = \vec{r}' + \vec{V} t
+$$&lt;/div&gt;
+&lt;h1&gt;Free Particle Lagrangian&lt;/h1&gt;
+&lt;p&gt;Comparing two inertial frames related by an infinitesimal velocity &lt;span class="math"&gt;\(\vec{\epsilon}\)&lt;/span&gt;, the form of the lagrangians in each frame should remain the same that is depending only on the square of velocity. Further they should differ from each other only by the total time derivative of a function of coordinates and time.&lt;/p&gt;
+&lt;p&gt;Given the relation between the inertial frames, the velocities are related through &lt;span class="math"&gt;\(\vec{v}' = \vec{v} + \vec{\epsilon}\)&lt;/span&gt;. The lagrangians are related then by&lt;/p&gt;
+&lt;div class="math"&gt;$$
+L' = L(\vec{v}' \cdot \vec{v}') = L( (\vec{v} + \vec{\epsilon}) \cdot (\vec{v} + \vec{\epsilon}) ) =
+L(\vec{v} \cdot \vec{v} + 2 \vec{v} \cdot \vec{\epsilon} + \vec{\epsilon} \cdot \vec{\epsilon} )
+$$&lt;/div&gt;
+&lt;p&gt;Expanding to first order in terms of &lt;span class="math"&gt;\(v^2 = \vec{v} \cdot \vec{v}\)&lt;/span&gt;&lt;/p&gt;
+&lt;div class="math"&gt;$$
+L(v'^2) = L(v^2) + \frac{\partial L}{\partial v^2} 2 \vec{v} \cdot \vec{\epsilon}
+$$&lt;/div&gt;
+&lt;p&gt;Since the second term already depends on &lt;span class="math"&gt;\(\vec{v}\)&lt;/span&gt; linearly, to remain so (and thus a total time derivative of position), &lt;span class="math"&gt;\(\partial L / \partial v^2\)&lt;/span&gt; must be independent of velocity. Thus the lagrangian is a linear function of &lt;span class="math"&gt;\(v^2\)&lt;/span&gt; up to a constant factor. Written as&lt;/p&gt;
+&lt;div class="math"&gt;$$
+L = \tfrac{1}{2} m v^2
+$$&lt;/div&gt;
+&lt;p&gt;By repeated transformations of infinitesimal relative velocities, the Lagrangian is also invariant for a finite relative velocity &lt;span class="math"&gt;\(V\)&lt;/span&gt; between frames.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+L' = \tfrac{1}{2} m v'^2 = \tfrac{1}{2} m (\vec{v} + \vec{V})^2 = \tfrac{1}{2} m v^2 + m \vec{v} \cdot \vec{V} + \tfrac{1}{2} m V^2 = L + d (m \vec{r} \cdot \vec{V} + \tfrac{1}{2} m V^2 t) / dt
+$$&lt;/div&gt;
+&lt;p&gt;Where the second term is a total time derivative of position and time and does not affect the action &lt;span class="math"&gt;\(S\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h3&gt;Sidenote&lt;/h3&gt;
+&lt;p&gt;An additional constant could be added, but it does not matter in terms of Lagrange's equations. Extremums don't change with constant shifts.&lt;/p&gt;
+&lt;h1&gt;Multiple Particle Lagrangian&lt;/h1&gt;
+&lt;p&gt;For a system of particle which only interact with each other (closed system), the interaction can be described as a function of the coordinates &lt;span class="math"&gt;\(-U(r_1, r_2, ...)\)&lt;/span&gt; known as the &lt;em&gt;potential energy&lt;/em&gt;.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+L = \sum \tfrac{1}{2} m_a v_a^2 - U(r_1, r_2, ...)
+$$&lt;/div&gt;
+&lt;p&gt;This lagrangian is isotropic in time as well, reversing time does not affect the lagrangian and therefore the equations of motion. Plugging this into the Euler-Lagrange equations we arrive at&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\frac{d}{dt} \left( \frac{\partial}{\partial \dot{q}} \right) - \frac{\partial L}{\partial q} = 0
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+\frac{\partial L}{\partial v_a} = m_a v_a \qquad \frac{\partial L}{\partial r} = - \frac{\partial U}{\partial r_a}
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+\frac{d}{dt} m_a v_a = \frac{\partial U}{\partial r_a}
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+\text{Force} = m_a \frac{d v_a}{dt} = - \frac{\partial U}{\partial r_a}
+$$&lt;/div&gt;
+&lt;p&gt;Where Force is expressed as in the classical Newton's Equation. The force, and thereby acceleration, only depend on the position of the system. These equations are identical up to a constant. The usual method is to define &lt;span class="math"&gt;\(U\)&lt;/span&gt; such that as &lt;span class="math"&gt;\(r \rightarrow \infty\)&lt;/span&gt;, &lt;span class="math"&gt;\(U \rightarrow \infty\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;This lagrangian can be rewritten terms of generalized coordinates &lt;span class="math"&gt;\(q, \dot{q}\)&lt;/span&gt; by expressing the cartesian coordintaes &lt;span class="math"&gt;\(r_a\)&lt;/span&gt;, &lt;span class="math"&gt;\(v_a\)&lt;/span&gt; in terms of the generalized coordinates.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+r_a = f(q_1, q_2, ..., q_s) \qquad v_a = \sum_k \frac{\partial f_a}{\partial q_k} \dot{q}_k
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+L = \tfrac{1}{2} \sum_k \frac{\partial f_a}{\partial q_k} \dot{q}_k \sum_i \frac{\partial f_a}{\partial q_i} \dot{q}_i - U(q) = \tfrac{1}{2} \sum_{i,k} a_{i,k} (q) \dot{q}_i \dot{q}_k - U(q)
+$$&lt;/div&gt;
+&lt;p&gt;For two interacting Lagrangian systems &lt;span class="math"&gt;\(L_a\)&lt;/span&gt;, &lt;span class="math"&gt;\(L_b\)&lt;/span&gt; the combined interaction is deonted as&lt;/p&gt;
+&lt;div class="math"&gt;$$
+L = T_a (q_a, \dot{q}_a) + T_b (q_b, \dot{q}_b) - U(q_a, q_b)
+$$&lt;/div&gt;
+&lt;p&gt;Where &lt;span class="math"&gt;\(T_{a}\)&lt;/span&gt;, &lt;span class="math"&gt;\(T_{b}\)&lt;/span&gt; are the kinetic energy terms. To solve for &lt;span class="math"&gt;\(L_a\)&lt;/span&gt;, we can treat &lt;span class="math"&gt;\(q_b\)&lt;/span&gt; as independent variables which depend on time, &lt;span class="math"&gt;\(q_b (t)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+L = T_a (q_a, \dot{q}_a) + T_b (q_b (t), \dot{q}_b (t)) - U(q_a, q_b (t))
+$$&lt;/div&gt;
+&lt;p&gt;And then changing perspective and considering &lt;span class="math"&gt;\(t\)&lt;/span&gt; instead of &lt;span class="math"&gt;\(q_b (t)\)&lt;/span&gt;, and &lt;span class="math"&gt;\( T_b (q_b (t), \dot{q}_b (t))\)&lt;/span&gt; can be ignored as a time derivative of a function that depends only on time, the lagrangian is now considered as&lt;/p&gt;
+&lt;div class="math"&gt;$$
+L = T_a (q_a, \dot{q}_a) - U(q_a, t)
+$$&lt;/div&gt;
+&lt;p&gt;A free particle interacting with an external field is then given by&lt;/p&gt;
+&lt;div class="math"&gt;$$
+L = \tfrac{1}{2} m v^2 - U(r, t)
+$$&lt;/div&gt;
+&lt;p&gt;And the equations of motion yield&lt;/p&gt;
+&lt;div class="math"&gt;$$
+m \dot{v} = - \frac{\partial U}{\partial r}
+$$&lt;/div&gt;
+&lt;p&gt;If the force &lt;span class="math"&gt;\(F\)&lt;/span&gt; is independent of &lt;span class="math"&gt;\(r\)&lt;/span&gt; in the field, and thus the field is uniform,&lt;/p&gt;
+&lt;div class="math"&gt;$$
+U(r, t) = -F \cdot r
+$$&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +    
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content></entry></feed>
